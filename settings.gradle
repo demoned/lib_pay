@@ -1,0 +1,2 @@
+include ':app', ':module_payment'
+rootProject.name = "Payment"

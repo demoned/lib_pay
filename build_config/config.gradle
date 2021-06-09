@@ -1,0 +1,83 @@
+ext {
+    //android开发版本配置
+    android = [
+            compileSdkVersion : 29,
+            applicationId     : "com.demons.pay",
+            minSdkVersion     : 19,
+            targetSdkVersion  : 29,
+            versionCode       : 1,
+            versionName       : "1.0",
+            AndroidJUnitRunner: "android.support.test.runner.AndroidJUnitRunner"
+    ]
+    //version配置
+    versions = [
+            "support-version": "29.0.0",
+            "junit-version"  : "4.12",
+    ]
+
+    //support配置
+    support = [
+            "constraint-layout"       : "com.android.support.constraint:constraint-layout:2.0.0-beta4",
+            'design'                  : "com.android.support:design:${versions["support-version"]}",
+            'animated-vector-drawable': "com.android.support:animated-vector-drawable:${versions["support-version"]}",
+            'junit'                   : "junit:junit:${versions["junit-version"]}",
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //rxjava
+            "rxjava"                : "io.reactivex.rxjava2:rxjava:2.2.3",
+            "rxandroid"             : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            //rx系列与View生命周期同步
+            "rxlifecycle"           : "com.trello.rxlifecycle3:rxlifecycle:3.1.0",
+            "rxlifecycle-components": "com.trello.rxlifecycle3:rxlifecycle-components:3.1.0",
+            //rxbinding
+            "rxbinding"             : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+            //rx 6.0权限请求
+            "rxpermissions"         : "com.github.tbruyelle:rxpermissions:0.10.2",
+            //network
+            "okhttp"                : "com.squareup.okhttp3:okhttp:3.10.0",
+            "retrofit"              : "com.squareup.retrofit2:retrofit:2.4.0",
+            "converter-gson"        : "com.squareup.retrofit2:converter-gson:2.4.0",
+            "adapter-rxjava"        : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            "logging-interceptor"   : "com.squareup.okhttp3:logging-interceptor:3.9.1",
+            //glide图片加载
+            "glide"                 : "com.github.bumptech.glide:glide:4.8.0",
+            "glide-compiler"        : "com.github.bumptech.glide:compiler:4.8.0",
+            //json解析
+            "gson"                  : "com.google.code.gson:gson:2.8.5",
+            //Google AAC
+            "lifecycle-extensions"  : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            //阿里路由框架
+            "arouter-api"           : "com.alibaba:arouter-api:1.4.1",
+            "arouter-compiler"      : "com.alibaba:arouter-compiler:1.2.2",
+            "eventbus"              : "org.greenrobot:eventbus:3.1.1",
+            "dagger"                : "com.google.dagger:dagger:2.13",
+            "dagger-compiler"       : "com.google.dagger:dagger-compiler:2.13",
+            "logger"                : "com.orhanobut:logger:1.15",
+            "MultiImageSelector"    : "com.github.lovetuzitong:MultiImageSelector:1.2",
+            "ServiceKeepLive"       : "com.github.Demons15:ServiceKeepLive:v1.2",
+            "ApkUpdate"             : "com.github.demoned:ApkUpdate:v1.2",
+            "kotlin-stdlib"         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41",
+            "lib_chart"             : "com.github.demoned:lib_chart:1.0.0",
+            "lib_floating"          : "com.github.demoned:lib_floating:v1.0.2",
+            "lib_process"           : "com.github.demoned:lib_process:v1.0.1",
+            "lib_statusbar"         : "com.github.demoned:lib_statusbar:v1.0.4",
+            "greendao"              : "org.greenrobot:greendao:3.3.0",
+            "FileZip"               : "com.github.demoned:FileZip:v1.0.1",
+            "leakcanary"            : "com.squareup.leakcanary:leakcanary-android:1.6.1",
+            "ApkUpdate"             : "com.github.demoned:ApkUpdate:v2.0.2",
+            "Banner"                : "cn.bingoogolapple:bga-banner:3.0.0@aar",
+            "agentweb"              : "com.just.agentweb:agentweb:4.1.3",
+            "pictureSelector"       : "com.github.demoned:lib_photoSelect:v1.0.0",
+            "pickerview"            : "com.github.demoned:pickerview:v1.0.1",
+            "location"              : "com.amap.api:location:latest.integration",
+            "fastjson"              : "com.alibaba:fastjson:1.1.71.android",
+            "wechat"                : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
+            "zxing"                 : "cn.bingoogolapple:bga-qrcode-zxing:1.3.7",
+            "times"                 : "com.squareup:android-times-square:1.6.5@aar",
+            "calendar"              : "com.github.demoned:calendar-master:v1.0.5",
+            "mmkv"                  : "com.tencent:mmkv-static:1.2.7"
+    ]
+}
+
+

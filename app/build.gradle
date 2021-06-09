@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.AndroidJUnitRunner
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+dependencies {
+    api project(path: ':module_payment')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(dir: 'libs', include: ['*.aar'])
+}

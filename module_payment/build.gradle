@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //network
+    api rootProject.ext.dependencies.okhttp
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    //日志打印
+    api rootProject.ext.dependencies["logger"]
+    //json解析
+    api rootProject.ext.dependencies.gson
+    //rx管理View的生命周期
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["rxlifecycle-components"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.support["constraint-layout"]
+    api rootProject.ext.support["design"]
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+    api rootProject.ext.dependencies.eventbus
+    api(rootProject.ext.dependencies.rxbinding) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies.rxpermissions) {
+        exclude group: 'com.android.support'
+    }
+
+    api(rootProject.ext.dependencies.glide) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    api rootProject.ext.dependencies["lifecycle-extensions"]
+    api rootProject.ext.dependencies.dagger
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    api rootProject.ext.dependencies["lib_statusbar"]
+    api rootProject.ext.dependencies.fastjson
+}
